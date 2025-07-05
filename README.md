@@ -178,15 +178,14 @@ This project is licensed under <a href="./LICENSE">MIT</a>. <img width=2300/>
 ## 👨‍💻 Developer Information
 
 **Created by:** Abhishek Kumar  
-**📧 Email:** [abhiydv23096@gmail.com](mailto:abhiydv23096@gmail.com)  
-**🔗 LinkedIn:** [Abhishek Kumar](https://www.linkedin.com/in/abhishek-kumar-70a69829a/)  
-**🐙 GitHub Profile:** [@abhishekkumar62000](https://github.com/abhishekkumar62000)
+📧 [abhiydv23096@gmail.com](mailto:abhiydv23096@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/abhishek-kumar-70a69829a/) ・ 🐙 [GitHub](https://github.com/abhishekkumar62000)
 
 <br>
 
-<img src="https://raw.githubusercontent.com/abhishekkumar62000/ai-financial-agent-adk/main/assets/abhishek_photo.jpg" width="200" style="border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);" alt="Abhishek Kumar">
-
-![abhishek_photo](https://github.com/user-attachments/assets/137914f5-21b8-457f-a508-566a6702c4e5)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abhishekkumar62000/ai-financial-agent-adk/main/assets/abhishek_photo.jpg" width="120" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.4);" alt="Abhishek Kumar Photo">
+</p>
 
 
 `Don't forget to give A star to this repository ⭐`
