@@ -176,15 +176,17 @@ This project is licensed under <a href="./LICENSE">MIT</a>. <img width=2300/>
   [![BuyMeACoffee](https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=codingstella&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/abhishekkumar62000)
 
 ## 👨‍💻 Developer Information
-**Created by **Abhishek kumar** 
-**📧 Email**: [abhiydv23096@gmail.com](mailto:abhiydv23096@gmail.com)  
-**🔗 LinkedIn**: [Abhishek Kumar](https://www.linkedin.com/in/abhishek-kumar-70a69829a/)  
-**🐙 GitHub Profile**: [@abhishekkumar62000](https://github.com/abhishekkumar62000)  
-**📸 Developer Profile Image**:- <img src="![1722245359938 (1)-photoaidcom-cropped-removebg-preview-photoaidcom-cropped jpg](https://github.com/user-attachments/assets/31ddd1bd-ccd9-46a4-921b-139d381f6f01)" width="150" height="150" style="border-radius: 50%;" alt="Developer Photo">
 
-![1722245359938 (1)-photoaidcom-cropped-removebg-preview-photoaidcom-cropped jpg](https://github.com/user-attachments/assets/31ddd1bd-ccd9-46a4-921b-139d381f6f01)
+**Created by:** Abhishek Kumar  
+**📧 Email:** [abhiydv23096@gmail.com](mailto:abhiydv23096@gmail.com)  
+**🔗 LinkedIn:** [Abhishek Kumar](https://www.linkedin.com/in/abhishek-kumar-70a69829a/)  
+**🐙 GitHub Profile:** [@abhishekkumar62000](https://github.com/abhishekkumar62000)
 
-</div>  
+<br>
+
+<img src="https://github.com/user-attachments/assets/31ddd1bd-ccd9-46a4-921b-139d381f6f01" width="150" height="150" style="border-radius: 50%;" alt="Developer Photo">
+
+
 
 
 `Don't forget to give A star to this repository ⭐`
