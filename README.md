@@ -5,6 +5,16 @@
 # 🤖 AI Financial Coach Agent with Google ADK
 
 **Try it here 👉 [Streamlit Demo](https://ai-financial-agent-adk.streamlit.app/)**
+<p align="center">
+  <b>AI-Powered AI Financial Agent With Google ADK</b><br>
+  <a href="https://ai-financial-agent-adk.streamlit.app" target="_blank">🌐 Live App Coming Soon!</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Streamlit-UI-red?style=for-the-badge&logo=streamlit" />
+  <img src="https://img.shields.io/badge/NLP%20Powered-Yes-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Career%20Tools-Finance|Agents|Interview-orange?style=for-the-badge" />
+</p>
 
 This project is a powerful, interactive personal finance advisor built using Google’s Agent Development Kit (ADK) and Gemini AI. It is designed to help users analyze their finances, set and track financial goals, optimize their savings, and manage debt through multiple specialized AI agents — all with data processed locally for maximum privacy and security.
 
