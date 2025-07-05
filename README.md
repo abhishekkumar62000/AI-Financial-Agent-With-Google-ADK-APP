@@ -2,9 +2,6 @@
 ![page1](https://github.com/user-attachments/assets/6fad0109-f94e-42eb-b67e-31dded7510e2)
 
 
----
-
-````markdown
 # 🤖 AI Financial Coach Agent with Google ADK
 
 **Try it here 👉 [Streamlit Demo](https://ai-financial-agent-adk.streamlit.app/)**
