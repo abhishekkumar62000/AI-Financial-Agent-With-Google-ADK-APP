@@ -184,7 +184,7 @@ This project is licensed under <a href="./LICENSE">MIT</a>. <img width=2300/>
 
 <br>
 
-<img src="https://github.com/user-attachments/assets/31ddd1bd-ccd9-46a4-921b-139d381f6f01" width="150" height="150" style="border-radius: 50%;" alt="Developer Photo">
+<img src="https://raw.githubusercontent.com/abhishekkumar62000/ai-financial-agent-adk/main/assets/abhishek_photo.jpg">
 
 
 
