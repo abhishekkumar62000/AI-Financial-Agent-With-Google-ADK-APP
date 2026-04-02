@@ -1,8 +1,8 @@
-streamlit 
-pandas      
-plotly   
-numpy  
-xarray   
+streamlit
+pandas
+plotly
+numpy
+xarray
 google-adkc
 python-dotenv
 deprecated
