@@ -1,6 +1,6 @@
 streamlit 
 pandas      
-plotly  
+plotly   
 numpy  
 xarray   
 google-adkc
