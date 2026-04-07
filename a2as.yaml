@@ -1,0 +1,226 @@
+manifest:
+  version: "0.1.3"
+  schema: https://a2as.org/cert/schema
+  subject:
+    name: abhishekkumar62000/ai-financial-agent-with-google-adk-app
+    source: https://github.com/abhishekkumar62000/ai-financial-agent-with-google-adk-app
+    branch: main
+    commit: "d71ca50a"
+    scope: [App.py]
+  issued:
+    by: A2AS.org
+    at: '2026-02-11T16:46:52Z'
+    url: https://a2as.org/certified/agents/abhishekkumar62000/ai-financial-agent-with-google-adk-app
+  signatures:
+    digest: sha256:vdjqNNxgmde74ipWWa37Ft0H0T3dGkhP9MxJ54tmRB0
+    key: ed25519:bXkLI-GTQYfxMe17bUpslNWB-WpxqrOuHgikZifP8sU
+    sig: ed25519:hoLx_M9vSXsajxNVLC38uDnRT7GVO48sN2E3YUZ1MP_ujRB5XAY_FUVbmCoR19soD9JLUADvdfencACqpUWIAA
+
+agents:
+  finance_system.budget_analysis_agent:
+    type: instance
+    models: [gemini-2.0-flash-exp]
+    params:
+      name: BudgetAnalysisAgent
+      description: Analyzes financial data to categorize spending patterns and recommend budget improvements
+      instruction: [You are a Budget Analysis Agent specialized in reviewing financial transactions and expenses., You are
+          the first agent in a sequence of three financial advisor agents., 'Your tasks:', '1. Analyze income, transactions,
+          and expenses in detail', 2. Categorize spending into logical groups with clear breakdown, 3. Identify spending patterns
+          and trends across categories, 4. Suggest specific areas where spending could be reduced with concrete suggestions,
+        '5. Provide actionable recommendations with specific, quantified potential savings amounts', 'Consider:', '- Number
+          of dependants when evaluating household expenses', '- Typical spending ratios for the income level (housing 30%,
+          food 15%, etc.)', '- Essential vs discretionary spending with clear separation', '- Seasonal spending patterns if
+          data spans multiple months', 'For spending categories, include ALL expenses from the user''s data, ensure percentages
+          add up to 100%,', and make sure every expense is categorized., 'For recommendations:', '- Provide at least 3-5 specific,
+          actionable recommendations with estimated savings', '- Explain the reasoning behind each recommendation', '- Consider
+          the impact on quality of life and long-term financial health', '- Suggest specific implementation steps for each
+          recommendation', 'IMPORTANT: Store your analysis in state[''budget_analysis''] for use by subsequent agents.']
+      output_schema: BudgetAnalysis
+      output_key: budget_analysis
+      class: FinanceAdvisorSystem
+  finance_system.coordinator_agent:
+    type: instance
+    params:
+      name: FinanceCoordinatorAgent
+      description: Coordinates specialized finance agents to provide comprehensive financial advice
+      class: FinanceAdvisorSystem
+      sub_agents: [self.budget_analysis_agent, self.savings_strategy_agent, self.debt_reduction_agent]
+  finance_system.debt_reduction_agent:
+    type: instance
+    models: [gemini-2.0-flash-exp]
+    params:
+      name: DebtReductionAgent
+      description: Creates optimized debt payoff plans to minimize interest paid and time to debt freedom
+      instruction: [You are a Debt Reduction Agent specialized in creating debt payoff strategies., 'You are the final agent
+          in the sequence. READ both state[''budget_analysis''] and state[''savings_strategy''] first.', 'Your tasks:', 1.
+          Review both budget analysis and savings strategy from the state, '2. Analyze debts by interest rate, balance, and
+          minimum payments', 3. Create prioritized debt payoff plans (avalanche and snowball methods), 4. Calculate total
+          interest paid and time to debt freedom, 5. Suggest debt consolidation or refinancing opportunities, 6. Provide specific
+          recommendations to accelerate debt payoff, 'Consider:', '- Cash flow constraints from the budget analysis', '- Emergency
+          fund and savings goals from the savings strategy', '- Psychological factors (quick wins vs mathematical optimization)',
+        '- Credit score impact and improvement opportunities', 'IMPORTANT: Store your final plan in state[''debt_reduction'']
+          and ensure it aligns with the previous analyses.']
+      output_schema: DebtReduction
+      output_key: debt_reduction
+      class: FinanceAdvisorSystem
+  finance_system.savings_strategy_agent:
+    type: instance
+    models: [gemini-2.0-flash-exp]
+    params:
+      name: SavingsStrategyAgent
+      description: Recommends optimal savings strategies based on income, expenses, and financial goals
+      instruction: [You are a Savings Strategy Agent specialized in creating personalized savings plans., 'You are the second
+          agent in the sequence. READ the budget analysis from state[''budget_analysis''] first.', 'Your tasks:', '1. Review
+          the budget analysis results from state[''budget_analysis'']', 2. Recommend comprehensive savings strategies based
+          on the analysis, 3. Calculate optimal emergency fund size based on expenses and dependants, 4. Suggest appropriate
+          savings allocation across different purposes, 5. Recommend practical automation techniques for saving consistently,
+        'Consider:', '- Risk factors based on job stability and dependants', '- Balancing immediate needs with long-term financial
+          health', '- Progressive savings rates as discretionary income increases', '- Multiple savings goals (emergency,
+          retirement, specific purchases)', '- Areas of potential savings identified in the budget analysis', 'IMPORTANT:
+          Store your strategy in state[''savings_strategy''] for use by the Debt Reduction Agent.']
+      output_schema: SavingsStrategy
+      output_key: savings_strategy
+      class: FinanceAdvisorSystem
+
+models:
+  gemini-2.0-flash-exp:
+    type: literal
+    agents: [finance_system.budget_analysis_agent, finance_system.savings_strategy_agent, finance_system.debt_reduction_agent]
+
+teams:
+  finance_system.coordinator_agent:
+    type: sequential
+    agents: [finance_system.coordinator_agent, finance_system.budget_analysis_agent, finance_system.savings_strategy_agent,
+      finance_system.debt_reduction_agent]
+
+imports:
+  Any: typing.Any
+  asyncio: asyncio
+  BaseModel: pydantic.BaseModel
+  csv: csv
+  datetime: datetime.datetime
+  Dict: typing.Dict
+  Field: pydantic.Field
+  genai: google.generativeai
+  go: plotly.graph_objects
+  InMemorySessionService: google.adk.sessions.InMemorySessionService
+  json: json
+  List: typing.List
+  LlmAgent: google.adk.agents.LlmAgent
+  load_dotenv: dotenv.load_dotenv
+  logging: logging
+  Optional: typing.Optional
+  os: os
+  pd: pandas
+  px: plotly.express
+  Runner: google.adk.runners.Runner
+  SequentialAgent: google.adk.agents.SequentialAgent
+  st: streamlit
+  StringIO: io.StringIO
+  types: google.genai.types
+
+functions:
+  __init__:
+    type: sync
+    module: App
+    args: [self, title, content, quiz]
+  _create_default_results:
+    type: sync
+    module: App
+    args: [self, financial_data]
+    params:
+      returns: Dict
+  _preprocess_manual_expenses:
+    type: sync
+    module: App
+    args: [self, session]
+  _preprocess_transactions:
+    type: sync
+    module: App
+    args: [self, session]
+  analyze_finances:
+    type: async
+    module: App
+    args: [self, financial_data]
+    params:
+      returns: Dict
+  animated_emoji:
+    type: sync
+    module: App
+    args: [emoji, key]
+  display_budget_analysis:
+    type: sync
+    module: App
+    args: [analysis]
+  display_csv_preview:
+    type: sync
+    module: App
+    args: [df]
+  display_debt_reduction:
+    type: sync
+    module: App
+    args: [plan]
+  display_savings_strategy:
+    type: sync
+    module: App
+    args: [strategy]
+  get_spending_insights_alerts:
+    type: sync
+    module: App
+    args: [transactions_df, manual_expenses, prev_month_data]
+  main:
+    type: sync
+    module: App
+  parse_csv_transactions:
+    type: sync
+    module: App
+    args: [file_content]
+    params:
+      returns: List[Dict]
+  parse_json_safely:
+    type: sync
+    module: App
+    args: [data, default_value]
+    params:
+      returns: Any
+  show_notifications:
+    type: sync
+    module: App
+  suggest_learning_path:
+    type: sync
+    module: App
+    args: [financial_data, goals]
+  suggest_smart_goals:
+    type: sync
+    module: App
+    args: [user_data]
+  validate_csv_format:
+    type: sync
+    module: App
+    args: [file]
+    params:
+      returns: bool
+
+variables:
+  Google_Gemini_ai_key:
+    type: env
+    params:
+      caller: [os.getenv, os.environ, genai.configure]
+      path: [App]
+
+files:
+  AI.png:
+    type: variable
+    actions: [read]
+    params:
+      caller: [os.path.exists]
+  image.png:
+    type: variable
+    actions: [read]
+    params:
+      caller: [os.path.exists]
+  pic.jpg:
+    type: variable
+    actions: [read]
+    params:
+      caller: [os.path.exists]
